@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".InputActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="16dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Data KGB Pegawai"
+                        android:textAlignment="center"
+                        android:textColor="@color/txBlue"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Nama"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etGelarDepan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Gelar Depan"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etGelarBelakang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Gelar Belakang"
+                        android:paddingStart="10dp" />
+                    <EditText
+                        android:id="@+id/etNip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Nip"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etPts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Di pekerjakan pada pts"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etJabatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Jabatan"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etStatusPegawai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Status Kepegawaian"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etUnitKerja"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Unit Kerja"
+                        android:paddingStart="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="20dp"-->
+<!--                android:layout_marginVertical="10dp"-->
+<!--                android:elevation="10dp"-->
+<!--                app:cardCornerRadius="16dp"-->
+<!--                >-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="20dp"-->
+<!--                    android:orientation="vertical">-->
+
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="SKKP Lama"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/txBlue"-->
+<!--                        android:textSize="25sp"-->
+<!--                        android:textStyle="bold" />-->
+
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/etNomorSL"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:background="@drawable/rounded_edittext"-->
+<!--                        android:hint="Nomor"-->
+<!--                        android:paddingStart="10dp" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/etTglSL"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:background="@drawable/rounded_edittext"-->
+<!--                        android:hint="Tanggal"-->
+<!--                        android:paddingStart="10dp" />-->
+
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/etTmtSL"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:background="@drawable/rounded_edittext"-->
+<!--                        android:hint="TMT"-->
+<!--                        android:paddingStart="10dp" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/etMasaKerjaSL"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:background="@drawable/rounded_edittext"-->
+<!--                        android:hint="Masa Kerja"-->
+<!--                        android:paddingStart="10dp" />-->
+
+
+
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="16dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SKKP Baru"
+                        android:textAlignment="center"
+                        android:textColor="@color/txBlue"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+
+
+                    <EditText
+                        android:id="@+id/etNomorSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Nomor"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etTglSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Tanggal"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etTmtSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="TMT"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etGajiSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Gaji"
+                        android:paddingStart="10dp" />
+
+
+
+                    <EditText
+                        android:id="@+id/etPangkatSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Pangkat"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etGolonganSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Golongan"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etMasaKerjaSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Masa Kerja"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/etTmtKgbBerikutnyaSB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="TMT KGB Berikutnya"
+                        android:paddingStart="10dp" />
+
+
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSimpan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/bg_btn"
+                android:text="Simpan"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

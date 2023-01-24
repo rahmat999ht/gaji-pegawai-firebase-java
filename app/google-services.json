@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "315890785068",
+    "project_id": "gaji-pegawai-7498e",
+    "storage_bucket": "gaji-pegawai-7498e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315890785068:android:cd50ea0a1749b662fe2a89",
+        "android_client_info": {
+          "package_name": "com.example.gajipegawai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315890785068-a9hu1opprno7u4kbudu49jpnqhc5cu9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlcBJ-Jmb78AKR2BAaMlACgzoKy01tsdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315890785068-a9hu1opprno7u4kbudu49jpnqhc5cu9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

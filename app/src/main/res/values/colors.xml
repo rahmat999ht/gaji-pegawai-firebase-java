@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="txBlue">#032FAA</color>
+    <color name="bgBlue">#39A0FA</color>
+    <color name="blue100">#0286FA</color>
+    <color name="blue70">#319EFD</color>
+    <color name="blue50">#77BFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="black50">#2E2D2D</color>
+    <color name="black70">#272626</color>
+    <color name="black80">#202020</color>
+    <color name="black90">#131313</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white50">#DBDBDB</color>
+
+</resources>
