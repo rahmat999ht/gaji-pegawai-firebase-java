@@ -2,21 +2,19 @@ package com.example.gajipegawai;
 
 import static android.content.ContentValues.TAG;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -28,8 +26,6 @@ public class InputActivity extends AppCompatActivity {
 
     EditText nama, gelarDepan, gelarBelakang, nip, pts, jabatan, statusPegawai, unitKerja, nomorSkkpBaru, gajiSkkpBaru, masaKerja, pangkatSkkpBaru, golonganSkkpBaru, tglSkkpBaru, tmtSkkpBaru, tmtKgbBerikutnya;
 
-//    List<Map> listSKKP;
-
     private List<Map> listSKKP = new ArrayList<>();
 
     Button tapSimpan;
@@ -37,20 +33,16 @@ public class InputActivity extends AppCompatActivity {
     Map<String, Object> doc = new HashMap<>();
 
     HashMap<String, String> docSKKP = new HashMap<String, String>();
-//    Map<String, String> docSKKP = new HashMap<String, String>();
 
     FirebaseFirestore dbF = FirebaseFirestore.getInstance();
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
 
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#39A0FA")));
-        actionBar.setTitle("Input KGB");
-        actionBar.setDisplayShowHomeEnabled(true);
+        sharedPreferences = getSharedPreferences("gaji", MODE_PRIVATE);
 
         nama = findViewById(R.id.etNama);
         gelarDepan = findViewById(R.id.etGelarDepan);
@@ -93,13 +85,13 @@ public class InputActivity extends AppCompatActivity {
                 String StmtKgbBerikutnya = tmtKgbBerikutnya.getText().toString();
 
                 doc.put("nama", Snama);
-                doc.put("gelar_depan", SgelarDepan);
-                doc.put("gelar_belakang", SgelarBelakang);
-                doc.put("nip", Snip);
-                doc.put("pts", Spts);
-                doc.put("jabatan", Sjabatan);
-                doc.put("status_pegawai", SstatusPegawai);
-                doc.put("unit_kerja", SunitKerja);
+//                doc.put("gelar_depan", SgelarDepan);
+//                doc.put("gelar_belakang", SgelarBelakang);
+//                doc.put("nip", Snip);
+//                doc.put("pts", Spts);
+//                doc.put("jabatan", Sjabatan);
+//                doc.put("status_pegawai", SstatusPegawai);
+//                doc.put("unit_kerja", SunitKerja);
 
                 docSKKP.put("nomor_skkp", SnomorSkkpBaru);
                 docSKKP.put("gaji_pokok", SgajiSkkpBaru);
@@ -110,23 +102,38 @@ public class InputActivity extends AppCompatActivity {
                 docSKKP.put("tmt_skkp", StmtSkkpBaru);
                 docSKKP.put("tmt_kgb_berikutnya", StmtKgbBerikutnya);
 
-                doc.put("skkp", listSKKP.add(docSKKP));
+//                doc.put("skkp", listSKKP.add(docSKKP));
+                final String user = sharedPreferences.getString("user", null);
 
-                dbF.collection("pegawai")
-                        .add(doc)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                InputActivity.super.onBackPressed();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
-                            }
-                        });
+
+                dbF.collection("pegawai").document(user).update(doc).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "DocumentSnapshot written with ID: " + user);
+                            InputActivity.super.onBackPressed();
+                        } else {
+                            Toast.makeText(InputActivity.this, "Gagal Update data", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+
+//                dbF.collection("pegawai")
+//                        .add(doc)
+//                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                            @Override
+//                            public void onSuccess(DocumentReference documentReference) {
+//                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+//                                InputActivity.super.onBackPressed();
+//                            }
+//                        })
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Log.w(TAG, "Error adding document", e);
+//                            }
+//                        });
             }
         });
     }

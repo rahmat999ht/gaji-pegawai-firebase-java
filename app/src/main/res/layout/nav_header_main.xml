@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/bg_btn2"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:padding="16dp">
+    <TextView
+        android:id="@+id/navNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Nama"
+        android:textSize="20sp"
+        android:textColor="@color/black90"/>
+    <TextView
+        android:id="@+id/navJabatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="Jabatan"
+        android:textSize="16sp"
+        android:textColor="@color/black90"/>
+</LinearLayout>

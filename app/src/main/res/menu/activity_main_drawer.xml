@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/barTambahKGB"
+            android:checkable="true"
+            android:icon="@drawable/ic_add_kgb"
+            android:title="Tambah KGB" />
+
+
+    </group>
+    <group android:id="@+id/group_menu">
+        <item
+            android:checkable="true"
+            android:id="@+id/barTentangAPP"
+            android:icon="@drawable/ic_about_app"
+            android:title="Tentang Aplikasi" />
+        <item
+            android:checkable="true"
+            android:id="@+id/barLogOut"
+            android:icon="@drawable/ic_logout"
+            android:title="Log-Out" />
+    </group>
+
+</menu>
