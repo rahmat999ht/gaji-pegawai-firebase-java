@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".InputActivity">
+    android:orientation="vertical"
+    tools:context=".views.InputActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,15 +24,13 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:elevation="10dp"
-                app:cardCornerRadius="16dp"
-                >
+                app:cardCornerRadius="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:orientation="vertical">
-
 
                     <TextView
                         android:layout_width="match_parent"
@@ -43,150 +41,250 @@
                         android:textSize="25sp"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/etNama"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Nama"
-                        android:paddingStart="10dp" />
+                        android:layout_marginTop="10dp"
+                        android:focusableInTouchMode="true"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterTextColor="@color/black50">
 
-                    <EditText
-                        android:id="@+id/etGelarDepan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Gelar Depan"
-                        android:paddingStart="10dp" />
+                        <EditText
+                            android:id="@+id/etNama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:hint="Nama" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/etGelarBelakang"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Gelar Belakang"
-                        android:paddingStart="10dp" />
-                    <EditText
-                        android:id="@+id/etNip"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Nip"
-                        android:paddingStart="10dp" />
 
-                    <EditText
-                        android:id="@+id/etPts"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Di pekerjakan pada pts"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etJabatan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Jabatan"
-                        android:paddingStart="10dp" />
+                        <EditText
+                            android:id="@+id/etGelarDepan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:hint="Gelar Depan" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/etStatusPegawai"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Status Kepegawaian"
-                        android:paddingStart="10dp" />
 
-                    <EditText
-                        android:id="@+id/etUnitKerja"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Unit Kerja"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etGelarBelakang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:hint="Gelar Belakang" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etNip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nip" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etPts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Di pekerjakan pada pts" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etJabatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Jabatan" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etStatusPegawai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Status Kepegawaian" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etUnitKerja"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Unit Kerja" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="20dp"-->
-<!--                android:layout_marginVertical="10dp"-->
-<!--                android:elevation="10dp"-->
-<!--                app:cardCornerRadius="16dp"-->
-<!--                >-->
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginHorizontal="20dp"-->
+            <!--                android:layout_marginVertical="10dp"-->
+            <!--                android:elevation="10dp"-->
+            <!--                app:cardCornerRadius="16dp"-->
+            <!--                >-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="20dp"-->
-<!--                    android:orientation="vertical">-->
-
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="SKKP Lama"-->
-<!--                        android:textAlignment="center"-->
-<!--                        android:textColor="@color/txBlue"-->
-<!--                        android:textSize="25sp"-->
-<!--                        android:textStyle="bold" />-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_margin="20dp"-->
+            <!--                    android:orientation="vertical">-->
 
 
-<!--                    <EditText-->
-<!--                        android:id="@+id/etNomorSL"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:background="@drawable/rounded_edittext"-->
-<!--                        android:hint="Nomor"-->
-<!--                        android:paddingStart="10dp" />-->
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/etTglSL"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:background="@drawable/rounded_edittext"-->
-<!--                        android:hint="Tanggal"-->
-<!--                        android:paddingStart="10dp" />-->
+            <!--                    <TextView-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="SKKP Lama"-->
+            <!--                        android:textAlignment="center"-->
+            <!--                        android:textColor="@color/txBlue"-->
+            <!--                        android:textSize="25sp"-->
+            <!--                        android:textStyle="bold" />-->
 
 
-<!--                    <EditText-->
-<!--                        android:id="@+id/etTmtSL"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:background="@drawable/rounded_edittext"-->
-<!--                        android:hint="TMT"-->
-<!--                        android:paddingStart="10dp" />-->
+            <!--                    <EditText-->
+            <!--                        android:id="@+id/etNomorSL"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="10dp"-->
+            <!--                        android:background="@drawable/rounded_edittext"-->
+            <!--                        android:hint="Nomor"-->
+            <!--                        android:paddingStart="10dp" />-->
 
-<!--                    <EditText-->
-<!--                        android:id="@+id/etMasaKerjaSL"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:background="@drawable/rounded_edittext"-->
-<!--                        android:hint="Masa Kerja"-->
-<!--                        android:paddingStart="10dp" />-->
-
-
+            <!--                    <EditText-->
+            <!--                        android:id="@+id/etTglSL"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="10dp"-->
+            <!--                        android:background="@drawable/rounded_edittext"-->
+            <!--                        android:hint="Tanggal"-->
+            <!--                        android:paddingStart="10dp" />-->
 
 
-<!--                </LinearLayout>-->
+            <!--                    <EditText-->
+            <!--                        android:id="@+id/etTmtSL"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="10dp"-->
+            <!--                        android:background="@drawable/rounded_edittext"-->
+            <!--                        android:hint="TMT"-->
+            <!--                        android:paddingStart="10dp" />-->
 
-<!--            </androidx.cardview.widget.CardView>-->
+            <!--                    <EditText-->
+            <!--                        android:id="@+id/etMasaKerjaSL"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="10dp"-->
+            <!--                        android:background="@drawable/rounded_edittext"-->
+            <!--                        android:hint="Masa Kerja"-->
+            <!--                        android:paddingStart="10dp" />-->
+
+
+            <!--                </LinearLayout>-->
+
+            <!--            </androidx.cardview.widget.CardView>-->
 
 
             <androidx.cardview.widget.CardView
@@ -195,8 +293,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="10dp"
                 android:elevation="10dp"
-                app:cardCornerRadius="16dp"
-                >
+                app:cardCornerRadius="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -214,84 +311,181 @@
                         android:textSize="25sp"
                         android:textStyle="bold" />
 
-
-
-                    <EditText
-                        android:id="@+id/etNomorSB"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Nomor"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etTglSB"
+                        <EditText
+                            android:id="@+id/etNomorSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nomor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Tanggal"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etTmtSB"
+                        <EditText
+                            android:id="@+id/etTglSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Tanggal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="TMT"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etGajiSB"
+                        <EditText
+                            android:id="@+id/etTmtSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="TMT" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Gaji"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
+
+                        <EditText
+                            android:id="@+id/etGajiSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Gaji" />
 
 
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/etPangkatSB"
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Pangkat"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etGolonganSB"
+
+                        <EditText
+                            android:id="@+id/etPangkatSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Pangkat" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Golongan"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etMasaKerjaSB"
+                        <EditText
+                            android:id="@+id/etGolonganSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Golongan" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="Masa Kerja"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
-                    <EditText
-                        android:id="@+id/etTmtKgbBerikutnyaSB"
+                        <EditText
+                            android:id="@+id/etMasaKerjaSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Masa Kerja" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:hint="TMT KGB Berikutnya"
-                        android:paddingStart="10dp" />
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/blue70"
+                        app:counterOverflowTextColor="@color/blue70">
 
+                        <EditText
+                            android:id="@+id/etTmtKgbBerikutnyaSB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
+                            android:hint="TMT KGB Berikutnya" />
 
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
                 </LinearLayout>
@@ -305,15 +499,12 @@
                 android:layout_margin="20dp"
                 android:background="@drawable/bg_btn"
                 android:text="Simpan"
-                android:textSize="16sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
     </ScrollView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

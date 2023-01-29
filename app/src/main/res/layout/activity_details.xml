@@ -4,6 +4,456 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    tools:context=".views.DetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bio Pegawai"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/txBlue" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TableRow android:layout_width="match_parent">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:text="Nama" />
+
+                            <TextView
+                                android:layout_width="10dp"
+                                android:layout_height="wrap_content"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailNama"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Gelar Depan" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailGelarDepan"
+                                android:text="Gelar Depan"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Gelar Belakang" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailGelarBelakang"
+                                android:text="Gelar Belakang"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Nip" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailNip"
+                                android:text="Nip"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="PTS" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailPts"
+                                android:text="PTS"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Jabatan" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailJabatan"
+                                android:text="Jabatan"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Status Kepeg" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailStatus"
+                                android:text="Status"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Unit Kerja" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailUnitKerja"
+                                android:text="Unit Kerja"
+                                android:textColor="@color/black50" />
+                        </TableRow>
+
+                    </TableLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="20dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:elevation="10dp"-->
+<!--                app:cardCornerRadius="16dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="SKKP Lama"-->
+<!--                        android:textSize="25sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:textColor="@color/txBlue" />-->
+
+
+<!--                    <TableLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:padding="16dp">-->
+
+<!--                        <TableRow android:layout_width="match_parent">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Nomor" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="10dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailNo_S_L"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Nomor"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="Tanggal" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailTgl_S_L"-->
+<!--                                android:text="Tanggal"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="TMT" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailTMT_S_L"-->
+<!--                                android:text="TMT"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="Gaji" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailGaji_S_L"-->
+<!--                                android:text="Gaji"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="Pangkat" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailPangkat_S_L"-->
+<!--                                android:text="Pangkat"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="Golongan" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailGol_S_L"-->
+<!--                                android:text="Golongan"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="Masa Kerja" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailMasaKerja_S_L"-->
+<!--                                android:text="Masa Kerja"-->
+<!--                                android:textColor="@color/black50" />-->
+
+<!--                        </TableRow>-->
+
+<!--                        <TableRow android:layout_marginTop="10dp">-->
+
+<!--                            <TextView android:text="TMT KGB Sebelumnya" />-->
+
+<!--                            <TextView android:text=":" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/detailTMT_KGB_Seb_S_L"-->
+<!--                                android:text="TMT KGB Sebelumnya"-->
+<!--                                android:textColor="@color/black50" />-->
+<!--                        </TableRow>-->
+
+<!--                    </TableLayout>-->
+
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SKKP Baru"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/txBlue" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TableRow android:layout_width="match_parent">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor" />
+
+                            <TextView
+                                android:layout_width="10dp"
+                                android:layout_height="wrap_content"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailNo_S_B"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Tanggal" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailTgl_S_B"
+                                android:text="Tanggal"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="TMT" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailTMT_S_B"
+                                android:text="TMT"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Gaji" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailGaji_S_B"
+                                android:text="Gaji"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Pangkat" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailPangkat_S_B"
+                                android:text="Pangkat"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Golongan" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailGol_S_B"
+                                android:text="Golongan"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="Masa Kerja" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailMasaKerja_S_B"
+                                android:text="Masa Kerja"
+                                android:textColor="@color/black50" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="10dp">
+
+                            <TextView android:text="TMT KGB Sebelumnya" />
+
+                            <TextView android:text=":" />
+
+                            <TextView
+                                android:id="@+id/detailTMT_KGB_Seb_S_B"
+                                android:text="TMT KGB Sebelumnya"
+                                android:textColor="@color/black50" />
+                        </TableRow>
+
+                    </TableLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

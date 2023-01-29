@@ -14,7 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gajipegawai.model.ModelPegawai;
+import com.example.gajipegawai.models.ModelPegawai;
+import com.example.gajipegawai.views.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;

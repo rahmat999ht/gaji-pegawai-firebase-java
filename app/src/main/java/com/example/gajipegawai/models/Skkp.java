@@ -1,4 +1,4 @@
-package com.example.gajipegawai.model;
+package com.example.gajipegawai.models;
 
 public class Skkp {
     private String nomorSkkp;
@@ -9,6 +9,26 @@ public class Skkp {
     private String tglSkkp;
     private String tmtSkkp;
     private String tmtKgbBerikutnya;
+
+    public Skkp(
+            String nomor_skkp,
+            String gaji_pokok,
+            String masa_kerja_skkp,
+            String pangkat_skkp,
+            String golongan_skkp,
+            String tgl_skkp,
+            String tmt_skkp,
+            String tmt_kgb_berikutnya
+    ){
+        this.nomorSkkp = nomor_skkp;
+        this.gajiPokok = gaji_pokok;
+        this.masaKerjaSkkp = masa_kerja_skkp;
+        this.pangkatSkkp = pangkat_skkp;
+        this.golonganSkkp = golongan_skkp;
+        this.tglSkkp = tgl_skkp;
+        this.tmtSkkp = tmt_skkp;
+        this.tmtKgbBerikutnya = tmt_kgb_berikutnya;
+    }
 
     public String getNomorSkkp() {
         return nomorSkkp;

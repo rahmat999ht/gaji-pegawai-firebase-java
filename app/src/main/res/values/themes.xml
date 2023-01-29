@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.GajiPegawai" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/bgBlue</item>
 
         <item name="colorOnSecondary">@color/bgBlue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/bgBlue</item>
         <!-- Customize your theme here. -->
-
     </style>
 </resources>
 

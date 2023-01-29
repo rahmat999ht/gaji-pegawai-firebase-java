@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
+    tools:context=".views.HomeActivity"
     tools:showIn="@layout/app_bar_main">
 
     <LinearLayout
-        android:layout_marginTop="57dp"
+        android:paddingTop="57dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

@@ -1,4 +1,4 @@
-package com.example.gajipegawai.model;
+package com.example.gajipegawai.models;
 
 public class ModelPegawai {
     private String id;

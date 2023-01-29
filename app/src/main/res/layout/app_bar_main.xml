@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".views.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/bgBlue"
             android:paddingHorizontal="16dp"
-            app:layout_scrollFlags="scroll|enterAlways">
+            >
 
             <ImageView
                 android:id="@+id/menu_icon"

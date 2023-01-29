@@ -1,6 +1,10 @@
 package com.example.gajipegawai.utils;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,21 +12,22 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.gajipegawai.HomeActivity;
+import com.example.gajipegawai.views.DetailsActivity;
 import com.example.gajipegawai.R;
-import com.example.gajipegawai.model.ModelPegawai;
+import com.example.gajipegawai.models.ModelPegawai;
 
 import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
-    HomeActivity listActivity;
+//    HomeActivity listActivity;
     List<ModelPegawai> modelPegawaiList;
-    Context context;
+    Context mContext;
+//    void onItemCLick;
 
-    public CustomAdapter(HomeActivity listActivity, List<ModelPegawai> modelPegawaiList) {
-        this.listActivity = listActivity;
+    public CustomAdapter( List<ModelPegawai> modelPegawaiList, Context context) {
+//        this.listActivity = listActivity;
         this.modelPegawaiList = modelPegawaiList;
-//        this.context = context;
+        this.mContext = context;
 
     }
 
@@ -33,14 +38,6 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.model_card,parent, false);
 
         ViewHolder viewHolder = new ViewHolder(itemView);
-
-
-        viewHolder.setOnClickListener(new ViewHolder.ClickListener() {
-            @Override
-            public void onItemCLick(View view, int posision) {
-//                startActivity(new Intent(context, DetailsActivity.class));
-            }
-        });
         return viewHolder;
     }
 
@@ -49,6 +46,20 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.mNama.setText(modelPegawaiList.get(position).getNama());
         holder.mGol.setText(modelPegawaiList.get(position).getNip());
         holder.mJabatan.setText(modelPegawaiList.get(position).getJabatan());
+
+        int posisi = position;
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "On TAP: " + posisi);
+                Log.d(TAG, "On TAP: " + modelPegawaiList.get(posisi).getId());
+
+                Intent intent = new Intent(mContext, DetailsActivity.class);
+                intent.putExtra("idItem", modelPegawaiList.get(posisi).getId());
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 
