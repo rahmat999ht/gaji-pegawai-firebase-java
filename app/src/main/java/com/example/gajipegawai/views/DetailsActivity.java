@@ -99,7 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
 
                     Skkp skkp = new Skkp(
                             (String) listSKKP.toString(),
-                            (String) dataArray.,
+                            (String) data.toString(),
                             (String) snapshot.getData().get("masa_kerja_skkp"),
                             (String) snapshot.getData().get("pangkat_skkp"),
                             (String) snapshot.getData().get("golongan_skkp"),
