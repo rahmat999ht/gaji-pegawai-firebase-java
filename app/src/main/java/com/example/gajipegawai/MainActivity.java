@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gajipegawai.models.ModelPegawai;
@@ -26,7 +25,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActionBar actionBar = getSupportActionBar();
-        Objects.requireNonNull(actionBar).hide();
 
         tapLogin = findViewById(R.id.btnLogin);
         nip = findViewById(R.id.etNip);

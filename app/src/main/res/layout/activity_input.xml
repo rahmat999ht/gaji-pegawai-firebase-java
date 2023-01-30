@@ -324,7 +324,7 @@
                         app:boxStrokeColor="@color/blue70"
                         app:counterOverflowTextColor="@color/blue70">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etNomorSB"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -346,14 +346,12 @@
                         app:boxStrokeColor="@color/blue70"
                         app:counterOverflowTextColor="@color/blue70">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etTglSB"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Tanggal" />
-
                     </com.google.android.material.textfield.TextInputLayout>
-
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"

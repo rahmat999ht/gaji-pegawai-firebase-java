@@ -2,6 +2,7 @@ package com.example.gajipegawai.views;
 
 import static android.content.ContentValues.TAG;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -19,12 +20,13 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class DetailsActivity extends AppCompatActivity {
 
     private FirebaseFirestore dbf;
     TextView nama, gelarDepan, gelarBelakang, nip, pts, jabatan, statusPegawai, unitKerja, nomorSkkpBaru, gajiSkkpBaru, masaKerja, pangkatSkkpBaru, golonganSkkpBaru, tglSkkpBaru, tmtSkkpBaru, tmtKgbBerikutnya;
+//    private Object dataSkkp;
+//    private String vGAji;
 
 
     @Override
@@ -70,6 +72,7 @@ public class DetailsActivity extends AppCompatActivity {
     private void setData(String id) {
         final DocumentReference docRef = dbf.collection("pegawai").document(id);
         docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onEvent(@Nullable DocumentSnapshot snapshot,
                                 @Nullable FirebaseFirestoreException e) {
@@ -88,24 +91,26 @@ public class DetailsActivity extends AppCompatActivity {
                     String xStatusPegawai = snapshot.getString("status_pegawai");
                     String xUnitKerja = snapshot.getString("unit_kerja");
 
-//                    Map<String, Object> data = snapshot.getData();
-                    Object listSKKP = Objects.requireNonNull(snapshot.getData()).get("skkp");
                     final Object data = snapshot.getData().get("skkp");
-
-                    List<Object> dataList = (List<Object>) data;
-                    Object[] dataArray = dataList.toArray();
-
-                    Map<String, Object> dataMap = (Map<String, Object>) data;
+                    Map<String, Object> dataSkkp = (Map<String, Object>) ((List<?>) data).get(((List<?>) data).size() - 1);
+                    Object vNoSkkp = dataSkkp.get("nomor_skkp");
+                    Object vGAji = dataSkkp.get("gaji_pokok");
+                    Object vMasaKerja = dataSkkp.get("masa_kerja_skkp");
+                    Object vPangkat = dataSkkp.get("pangkat_skkp");
+                    Object vGolongan = dataSkkp.get("golongan_skkp");
+                    Object vTgl = dataSkkp.get("tgl_skkp");
+                    Object vTmt = dataSkkp.get("tmt_skkp");
+                    Object vTmtKgbSebelumnya = dataSkkp.get("tmt_kgb_berikutnya");
 
                     Skkp skkp = new Skkp(
-                            (String) listSKKP.toString(),
-                            (String) data.toString(),
-                            (String) snapshot.getData().get("masa_kerja_skkp"),
-                            (String) snapshot.getData().get("pangkat_skkp"),
-                            (String) snapshot.getData().get("golongan_skkp"),
-                            (String) snapshot.getData().get("tgl_skkp"),
-                            (String) snapshot.getData().get("tmt_skkp"),
-                            (String) snapshot.getData().get("tmt_kgb_berikutnya"));
+                            (String) vNoSkkp,
+                            (String) vGAji,
+                            (String) vMasaKerja,
+                            (String) vPangkat,
+                            (String) vGolongan,
+                            (String) vTgl,
+                            (String) vTmt,
+                            (String) vTmtKgbSebelumnya);
 
                     nama.setText(xNama);
                     jabatan.setText(xJabatan);
@@ -116,24 +121,8 @@ public class DetailsActivity extends AppCompatActivity {
                     statusPegawai.setText(xStatusPegawai);
                     unitKerja.setText(xUnitKerja);
 
-
-//                    DatabaseReference ref = dbf.getReference("my_list");
-//
-//                    ref.addListenerForSingleValueEvent(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                            List<String> list = (List<String>) dataSnapshot.getValue();
-//                            String lastItem = list.get(list.size() - 1);
-//                            // Use the last item
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(DatabaseError databaseError) {
-//                            // Handle error
-//                        }
-//                    });
                     nomorSkkpBaru.setText(skkp.getNomorSkkp());
-                    gajiSkkpBaru.setText(skkp.getGajiPokok());
+                    gajiSkkpBaru.setText("Rp " + skkp.getGajiPokok());
                     masaKerja.setText(skkp.getMasaKerjaSkkp());
                     pangkatSkkpBaru.setText(skkp.getPangkatSkkp());
                     golonganSkkpBaru.setText(skkp.getGolonganSkkp());

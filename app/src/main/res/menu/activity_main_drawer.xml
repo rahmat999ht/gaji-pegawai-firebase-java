@@ -10,11 +10,11 @@
 
     </group>
     <group android:id="@+id/group_menu">
-        <item
-            android:checkable="true"
-            android:id="@+id/barTentangAPP"
-            android:icon="@drawable/ic_about_app"
-            android:title="Tentang Aplikasi" />
+<!--        <item-->
+<!--            android:checkable="true"-->
+<!--            android:id="@+id/barTentangAPP"-->
+<!--            android:icon="@drawable/ic_about_app"-->
+<!--            android:title="Tentang Aplikasi" />-->
         <item
             android:checkable="true"
             android:id="@+id/barLogOut"

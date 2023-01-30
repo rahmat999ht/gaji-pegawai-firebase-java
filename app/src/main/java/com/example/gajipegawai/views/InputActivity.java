@@ -2,11 +2,13 @@ package com.example.gajipegawai.views;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,6 +70,27 @@ public class InputActivity extends AppCompatActivity {
         tmtKgbBerikutnya = findViewById(R.id.etTmtKgbBerikutnyaSB);
 
         tapSimpan = findViewById(R.id.btnSimpan);
+
+        tglSkkpBaru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog(tglSkkpBaru);
+            }
+        });
+
+        tmtSkkpBaru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog(tmtSkkpBaru);
+            }
+        });
+
+        tmtKgbBerikutnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog(tmtKgbBerikutnya);
+            }
+        });
 
         tapSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +163,28 @@ public class InputActivity extends AppCompatActivity {
             }
         });
         isStreamProfile();
+    }
+
+    private void showDatePickerDialog(EditText editText) {
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int day) {
+                        String date = String.format("%d-%d-%d", day, month + 1, year);
+
+
+                        editText.setText(date);
+
+
+                    }
+                }, year, month, day);
+
+        datePickerDialog.show();
     }
 
     private void isStreamProfile() {

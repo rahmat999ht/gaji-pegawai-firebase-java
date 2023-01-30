@@ -46,7 +46,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -129,11 +129,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(getApplicationContext(), InputActivity.class));
                 break;
             }
-            case R.id.barTentangAPP: {
-                Log.d("navbar", "barTentangAPP");
-                Toast.makeText(HomeActivity.this, "barTentangAPP", Toast.LENGTH_SHORT).show();
-                break;
-            }
+//            case R.id.barTentangAPP: {
+//                Log.d("navbar", "barTentangAPP");
+//                Toast.makeText(HomeActivity.this, "barTentangAPP", Toast.LENGTH_SHORT).show();
+//                break;
+//            }
             case R.id.barLogOut: {
                 alertLogOut();
                 break;
@@ -144,7 +144,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void alertLogOut(){
-        builder.setTitle("Alert").setMessage("Yakin Ingin Log-Out ??").setCancelable(true).setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+        builder.setTitle("Log-Out").setMessage("Yakin Ingin Log-Out ??").setCancelable(true).setPositiveButton("Ya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 isLogOut();
@@ -213,29 +213,37 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private void isStreamProfile() {
 //        app:layout_scrollFlags="scroll|enterAlways"
         String user = sharedPreferences.getString("user", null);
-        final DocumentReference docRef = dbf.collection("pegawai").document(user);
-        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot snapshot,
-                                @Nullable FirebaseFirestoreException e) {
-                if (e != null) {
-                    Log.w(TAG, "Listen failed.", e);
-                    return;
+        if(user != null && !user.equals("kosong")){
+            final DocumentReference docRef = dbf.collection("pegawai").document(user);
+            docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                    @Nullable FirebaseFirestoreException e) {
+                    if (e != null) {
+                        Log.w(TAG, "Listen failed.", e);
+                        return;
+                    }
+
+                    if (snapshot != null && snapshot.exists()) {
+                        String nama = snapshot.getString("nama");
+                        String jabatan = snapshot.getString("jabatan");
+
+                        mNama.setText(nama);
+                        mJabatan.setText(jabatan);
+
+                        Log.d(TAG, "Current data: " + nama + jabatan);
+                    } else {
+                        Log.d(TAG, "Current data: null");
+                    }
                 }
+            });
+        }
+        else {
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            finish();
 
-                if (snapshot != null && snapshot.exists()) {
-                    String nama = snapshot.getString("nama");
-                    String jabatan = snapshot.getString("jabatan");
+        }
 
-                    mNama.setText(nama);
-                    mJabatan.setText(jabatan);
-
-                    Log.d(TAG, "Current data: " + nama + jabatan);
-                } else {
-                    Log.d(TAG, "Current data: null");
-                }
-            }
-        });
     }
 
     private void isStreamData() {
@@ -262,48 +270,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 //                        mRecyclerView.notifyAll();
                     }
                 }
-//                assert value != null;
-//                for (DocumentChange dc : value.getDocumentChanges()) {
-//                    switch (dc.getType()) {
-//                        case ADDED:
-//                            Log.d("TAG", "New Msg: " + dc.getDocument());
-////                            ModelPegawai modelPegawai = dc.getDocument().toObject(ModelPegawai.class);
-////                            modelPegawaiList.add(modelPegawai);
-////                        customAdapter = new CustomAdapter(modelPegawaiList, HomeActivity.this);
-////                        mRecyclerView.setAdapter(customAdapter);
-//                            break;
-//                        case MODIFIED:
-//                            Log.d("TAG", "Modified Msg: " + dc.getDocument());
-////                            ModelPegawai modelPegawai2 = dc.getDocument().toObject(ModelPegawai.class);
-////                            modelPegawaiList.add(modelPegawai2);
-////                            customAdapter = new CustomAdapter(modelPegawaiList, HomeActivity.this);
-////                            mRecyclerView.setAdapter(customAdapter);
-//                            break;
-//                        case REMOVED:
-//                            Log.d("TAG", "Removed Msg: " + dc.getDocument());
-////                            ModelPegawai modelPegawai3 = dc.getDocument().toObject(ModelPegawai.class);
-////                            modelPegawaiList.add(modelPegawai3);
-////                            customAdapter = new CustomAdapter(modelPegawaiList, HomeActivity.this);
-////                            mRecyclerView.setAdapter(customAdapter);
-//                            break;
-//                    }
-//                }
-
             }
         });
-        // Stop listening to changes
-//        if(data.)
-//        data.remove();
     }
 
 
     private void isLogOut() {
-
         @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("user", "kosong");
         editor.apply();
         String user = sharedPreferences.getString("user", null);
-        Log.d("sharedPreferences", user);
+//        Log.d("sharedPreferences", user);
         startActivity(new Intent(HomeActivity.this, MainActivity.class));
         finish();
     }
@@ -311,20 +288,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onStart() {
         super.onStart();
-//        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.putString("user", "kosong");
-//        editor.apply();
         String currentUser = sharedPreferences.getString("user", null);
-        if (Objects.equals(currentUser, "kosong")) {
+        Map<String, ?> user = sharedPreferences.getAll();
+        if (currentUser == null) {
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            finish();
+        } else if (currentUser == "kosong") {
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            finish();
+        }else if (sharedPreferences == null) {
             startActivity(new Intent(HomeActivity.this, MainActivity.class));
             finish();
         }
 //        isStreamData();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-//        listenerRegistration.remove();
     }
 }
