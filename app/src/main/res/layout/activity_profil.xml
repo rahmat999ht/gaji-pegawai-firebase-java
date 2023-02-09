@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.DetailsActivity">
+    tools:context=".views.ProfilActivity">
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,51 +25,27 @@
                 android:elevation="10dp"
                 app:cardCornerRadius="16dp">
 
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="vertical"
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content">
-                   <androidx.constraintlayout.widget.ConstraintLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:layout_marginHorizontal="16dp"
-                       android:layout_marginTop="16dp">
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="Detail SKKP"
-                           android:layout_marginTop="2dp"
-                           android:textSize="25sp"
-                           android:textStyle="bold"
-                           android:textColor="@color/txBlue"
-                           app:layout_constraintTop_toTopOf="parent"
-                           app:layout_constraintStart_toStartOf="parent"/>
-
-                       <androidx.cardview.widget.CardView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:backgroundTint="@color/txBlue"
-                           android:elevation="10dp"
-                           app:cardCornerRadius="16dp"
-                           app:layout_constraintEnd_toEndOf="parent"
-                           app:layout_constraintTop_toTopOf="parent">
-
-                           <TextView
-                               android:id="@+id/detailkomfirmasi"
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_margin="10dp"
-                               android:text="komfirmasi"
-                               android:textSize="16sp"
-                               android:textColor="@color/white" />
-
-                       </androidx.cardview.widget.CardView>
-
-                   </androidx.constraintlayout.widget.ConstraintLayout>
-
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Detail Profil"
+                            android:layout_marginTop="2dp"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/txBlue"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TableLayout
                         android:layout_width="match_parent"
@@ -80,7 +57,7 @@
                             <TextView
                                 android:layout_width="170dp"
                                 android:layout_height="wrap_content"
-                                android:text="Nomor"
+                                android:text="Nama"
                                 android:textSize="16sp"/>
 
                             <TextView
@@ -90,10 +67,10 @@
                                 android:text=":" />
 
                             <TextView
-                                android:id="@+id/ondetailNo_S_B"
+                                android:id="@+id/ondetailNama"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nomor"
+                                android:text="Nama"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -101,15 +78,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="Tanggal"
+                            <TextView android:text="Gelar Depan"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailTgl_S_B"
-                                android:text="Tanggal"
+                                android:id="@+id/ondetailGD"
+                                android:text="Gelar Depan"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -117,15 +94,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="TMT"
+                            <TextView android:text="Gelar Belakang"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailTMT_S_B"
-                                android:text="TMT"
+                                android:id="@+id/ondetailGB"
+                                android:text="Gelar Belakang"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -133,15 +110,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="Gaji"
+                            <TextView android:text="Nip"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailGaji_S_B"
-                                android:text="Gaji"
+                                android:id="@+id/ondetailNip"
+                                android:text="Nip"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -149,15 +126,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="Pangkat"
+                            <TextView android:text="Pts"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailPangkat_S_B"
-                                android:text="Pangkat"
+                                android:id="@+id/ondetailPts"
+                                android:text="Pts"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -165,15 +142,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="Golongan"
+                            <TextView android:text="Jabatan"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailGol_S_B"
-                                android:text="Golongan"
+                                android:id="@+id/ondetailJabatan"
+                                android:text="Jabatan"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -181,15 +158,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="Masa Kerja"
+                            <TextView android:text="Status Pegawai"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailMasaKerja_S_B"
-                                android:text="Masa Kerja"
+                                android:id="@+id/ondetailStatus"
+                                android:text="Status Pegawai"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
 
@@ -197,15 +174,15 @@
 
                         <TableRow android:layout_marginTop="10dp">
 
-                            <TextView android:text="TMT KGB Sebelumnya"
+                            <TextView android:text="Unit Kerja"
                                 android:textSize="16sp"/>
 
                             <TextView android:text=":"
                                 android:textSize="16sp"/>
 
                             <TextView
-                                android:id="@+id/ondetailTMT_KGB_Seb_S_B"
-                                android:text="TMT KGB Sebelumnya"
+                                android:id="@+id/ondetailUnitKerja"
+                                android:text="Unit Kerja"
                                 android:textSize="16sp"
                                 android:textColor="@color/black50" />
                         </TableRow>

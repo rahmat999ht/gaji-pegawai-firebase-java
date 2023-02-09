@@ -8,13 +8,14 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/bgBlue"
+            android:background="@color/white"
             android:paddingHorizontal="16dp"
             >
 
@@ -24,14 +25,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_baseline_menu_24" />
+                android:src="@drawable/ic_baseline_menu_24"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
                 android:layout_toEndOf="@+id/menu_icon"
-                android:textColor="@color/white"
+                android:textColor="@color/black70"
                 android:textSize="18sp"
                 android:text="Gaji Pegawai"/>
 

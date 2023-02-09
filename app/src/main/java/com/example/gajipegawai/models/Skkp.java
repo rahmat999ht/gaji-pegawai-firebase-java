@@ -1,6 +1,7 @@
 package com.example.gajipegawai.models;
 
 public class Skkp {
+    private String id;
     private String nomorSkkp;
     private String gajiPokok;
     private String masaKerjaSkkp;
@@ -9,25 +10,48 @@ public class Skkp {
     private String tglSkkp;
     private String tmtSkkp;
     private String tmtKgbBerikutnya;
+    private String komf;
 
     public Skkp(
+            String id,
             String nomor_skkp,
             String gaji_pokok,
-            String masa_kerja_skkp,
             String pangkat_skkp,
             String golongan_skkp,
+            String masa_kerja,
             String tgl_skkp,
             String tmt_skkp,
-            String tmt_kgb_berikutnya
+            String tmt_skkp_berikutnya,
+            String komf
     ){
+        this.id = id;
         this.nomorSkkp = nomor_skkp;
         this.gajiPokok = gaji_pokok;
-        this.masaKerjaSkkp = masa_kerja_skkp;
         this.pangkatSkkp = pangkat_skkp;
         this.golonganSkkp = golongan_skkp;
+        this.masaKerjaSkkp = masa_kerja;
         this.tglSkkp = tgl_skkp;
         this.tmtSkkp = tmt_skkp;
-        this.tmtKgbBerikutnya = tmt_kgb_berikutnya;
+        this.tmtKgbBerikutnya = tmt_skkp_berikutnya;
+        this.komf = komf;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String value) {
+        this.id = value;
+    }
+
+
+    public String getKonf() {
+        return komf;
+    }
+
+    public void setKonf(String value) {
+        this.komf = value;
     }
 
     public String getNomorSkkp() {

@@ -11,7 +11,7 @@ import com.example.gajipegawai.R;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
-    TextView mGol, mNama, mJabatan;
+    TextView mGol, mNama, mJabatan, mKomf;
     View mView;
     CardView cardView;
 
@@ -24,6 +24,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         mNama = itemView.findViewById(R.id.tvNama);
         mGol = itemView.findViewById(R.id.tvGol);
         mJabatan = itemView.findViewById(R.id.tvJab);
+        mKomf = itemView.findViewById(R.id.komfirmasi);
         cardView = itemView.findViewById(R.id.cardItem);
     }
 
