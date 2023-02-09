@@ -157,7 +157,6 @@ public class InputActivity extends AppCompatActivity {
                             InputActivity.super.onBackPressed();
                         } else {
                             Toast.makeText(InputActivity.this, "Gagal Update data", Toast.LENGTH_SHORT).show();
-
                         }
                     }
                 });

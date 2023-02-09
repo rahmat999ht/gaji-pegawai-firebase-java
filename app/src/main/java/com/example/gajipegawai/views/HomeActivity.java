@@ -125,12 +125,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         setNavigationViewListener();
 
-//        ShowData();
-        setData();
-        isStreamProfile();
-        getSKKP();
-//        isStreamData();
+    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        String currentUser = sharedPreferences.getString("user", null);
+//        Log.d("isUser", currentUser);
+        if (currentUser != null && !currentUser.equals("kosong")) {
+            setData();
+            isStreamProfile();
+            getSKKP();
+        } else {
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            finish();
+        }
     }
 
     private void setNavigationViewListener() {
@@ -161,25 +170,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void alertLogOut() {
-        builder.setTitle("Log-Out").setMessage("Yakin Ingin Log-Out ??").setCancelable(true).setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                isLogOut();
-            }
-        }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        }).show();
-    }
-
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -225,7 +219,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         });
 
 
-
                     } else {
                         Log.d(TAG, "No such document");
                     }
@@ -239,42 +232,34 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private void isStreamProfile() {
 //        app:layout_scrollFlags="scroll|enterAlways"
         String user = sharedPreferences.getString("user", null);
-        if (user != null && !user.equals("kosong")) {
-            final DocumentReference docRef = dbf.collection("pegawai").document(user);
-            docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                @Override
-                public void onEvent(@Nullable DocumentSnapshot snapshot,
-                                    @Nullable FirebaseFirestoreException e) {
-                    if (e != null) {
-                        Log.w(TAG, "Listen failed.", e);
-                        return;
-                    }
 
-                    if (snapshot != null && snapshot.exists()) {
-                        String nama = snapshot.getString("nama");
-                        String jabatan = snapshot.getString("jabatan");
-
-                        mNama.setText(nama);
-                        mJabatan.setText(jabatan);
-
-                        Log.d(TAG, "Current data: " + nama + jabatan);
-                    } else {
-                        Log.d(TAG, "Current data: null");
-                    }
+        final DocumentReference docRef = dbf.collection("pegawai").document(user);
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w(TAG, "Listen failed.", e);
+                    return;
                 }
-            });
-        } else {
-            startActivity(new Intent(HomeActivity.this, MainActivity.class));
-            finish();
 
-        }
+                if (snapshot != null && snapshot.exists()) {
+                    String nama = snapshot.getString("nama");
+                    String jabatan = snapshot.getString("jabatan");
 
+                    mNama.setText(nama);
+                    mJabatan.setText(jabatan);
+
+                    Log.d(TAG, "Current data: " + nama + jabatan);
+                } else {
+                    Log.d(TAG, "Current data: null");
+                }
+            }
+        });
     }
 
     private void setData() {
-
         String currentUser = sharedPreferences.getString("user", null);
-
         final DocumentReference docRef = dbf.collection("pegawai").document(currentUser);
         docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @SuppressLint("SetTextI18n")
@@ -328,6 +313,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    private void alertLogOut() {
+        builder.setTitle("Log-Out").setMessage("Yakin Ingin Log-Out ??").setCancelable(true).setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                isLogOut();
+            }
+        }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        }).show();
+    }
+
     private void isLogOut() {
         @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("user", "kosong");
@@ -336,22 +335,5 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 //        Log.d("sharedPreferences", user);
         startActivity(new Intent(HomeActivity.this, MainActivity.class));
         finish();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        String currentUser = sharedPreferences.getString("user", null);
-        Map<String, ?> user = sharedPreferences.getAll();
-        if (currentUser == null) {
-            startActivity(new Intent(HomeActivity.this, MainActivity.class));
-            finish();
-        } else if (currentUser == "kosong") {
-            startActivity(new Intent(HomeActivity.this, MainActivity.class));
-            finish();
-        } else if (sharedPreferences == null) {
-            startActivity(new Intent(HomeActivity.this, MainActivity.class));
-            finish();
-        }
     }
 }
