@@ -24,7 +24,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         mNama = itemView.findViewById(R.id.tvNama);
         mGol = itemView.findViewById(R.id.tvGol);
         mJabatan = itemView.findViewById(R.id.tvJab);
-        mKomf = itemView.findViewById(R.id.komfirmasi);
+        mKomf = itemView.findViewById(R.id.tvKomfirmasi);
         cardView = itemView.findViewById(R.id.cardItem);
     }
 

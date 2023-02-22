@@ -133,6 +133,7 @@ public class InputActivity extends AppCompatActivity {
                 docSKKP.put("tgl_skkp", StglSkkpBaru);
                 docSKKP.put("tmt_skkp", StmtSkkpBaru);
                 docSKKP.put("tmt_kgb_berikutnya", StmtKgbBerikutnya);
+                docSKKP.put("disahkan_oleh", "");
                 docSKKP.put("komfirmasi", "menunggu");
 //                Skkp skkp = new Skkp(
 //                        docSKKP.put("nomor_skkp", SnomorSkkpBaru),

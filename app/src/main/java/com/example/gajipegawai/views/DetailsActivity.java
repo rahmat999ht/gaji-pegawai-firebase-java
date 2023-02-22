@@ -38,7 +38,7 @@ public class DetailsActivity extends AppCompatActivity {
         tglSkkpBaru = findViewById(R.id.ondetailTgl_S_B);
         tmtSkkpBaru = findViewById(R.id.ondetailTMT_S_B);
         tmtKgbBerikutnya = findViewById(R.id.ondetailTMT_KGB_Seb_S_B);
-        komf = findViewById(R.id.detailkomfirmasi);
+//        komf = findViewById(R.id.detailkomfirmasi);
 
         nomorSkkpBaru.setText((String) skkp.get("nomor_skkp"));
         gajiSkkpBaru.setText((String) skkp.get("gaji_pokok"));
@@ -48,7 +48,7 @@ public class DetailsActivity extends AppCompatActivity {
         tglSkkpBaru.setText((String) skkp.get("tgl_skkp"));
         tmtSkkpBaru.setText((String) skkp.get("tmt_skkp"));
         tmtKgbBerikutnya.setText((String) skkp.get("tmt_kgb_berikutnya"));
-        komf.setText((String) skkp.get("komfirmasi"));
+//        komf.setText((String) skkp.get("komfirmasi"));
 
 //        getIncomingIntent();
     }

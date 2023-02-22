@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/komfirmasi"
+                android:id="@+id/tvKomfirmasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="7dp"

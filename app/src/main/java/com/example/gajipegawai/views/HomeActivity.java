@@ -116,6 +116,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        ImageView pdfIcon = (ImageView) findViewById(R.id.pdf_icon);
+        pdfIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(HomeActivity.this, PdfView.class);
+//                myIntent.putExtra("key", value); //Optional parameters
+                HomeActivity.this.startActivity(myIntent);
+//                Toast.makeText(HomeActivity.this, "PDF view", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        ActivityCompat.requestPermissions(this, new String[]{
+//                Manifest.permission.WRITE_EXTERNAL_STORAGE
+//        },PackageManager.PERMISSION_GRANTED);
+
         mRecyclerView = findViewById(R.id.rvPegawai);
         mRecyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -140,6 +155,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(HomeActivity.this, MainActivity.class));
             finish();
         }
+    }
+
+    private void createPDF(){
+
     }
 
     private void setNavigationViewListener() {
@@ -212,11 +231,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         customAdapter = new CustomAdapter(skkpList, HomeActivity.this);
                         mRecyclerView.setAdapter(customAdapter);
 //                        customAdapter.sortListDescending(skkpList);
-                        skkpList.sort((o1, o2) -> {
-                            String masaKerja1 = (String) o1.get("pangkat_skkp");
-                            String masaKerja2 = (String) o2.get("pangkat_skkp");
-                            return masaKerja2.compareTo(masaKerja2);
-                        });
+//                        skkpList.sort((o1, o2) -> {
+//                            String masaKerja1 = (String) o1.get("pangkat_skkp");
+//                            String masaKerja2 = (String) o2.get("pangkat_skkp");
+//                            return masaKerja2.compareTo(masaKerja2);
+//                        });
 
 
                     } else {
@@ -286,6 +305,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     Object vTmt = dataSkkp.get("tmt_skkp");
                     Object vTmtKgbSebelumnya = dataSkkp.get("tmt_kgb_berikutnya");
                     Object vKomf = dataSkkp.get("komfirmasi");
+                    Object vDiSahkanOleh = dataSkkp.get("disahkan_oleh");
 
                     Skkp skkp = new Skkp(
                             (String) vId,
@@ -297,7 +317,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                             (String) vTgl,
                             (String) vTmt,
                             (String) vTmtKgbSebelumnya,
-                            (String) vKomf);
+                            (String) vKomf,
+                            (String) vDiSahkanOleh);
 
                     nomorSkkpBaru.setText(skkp.getNomorSkkp());
                     gajiSkkpBaru.setText("Rp " + skkp.getGajiPokok());

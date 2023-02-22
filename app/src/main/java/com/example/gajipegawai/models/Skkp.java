@@ -11,6 +11,7 @@ public class Skkp {
     private String tmtSkkp;
     private String tmtKgbBerikutnya;
     private String komf;
+    private String diSahkanOleh;
 
     public Skkp(
             String id,
@@ -22,8 +23,9 @@ public class Skkp {
             String tgl_skkp,
             String tmt_skkp,
             String tmt_skkp_berikutnya,
-            String komf
-    ){
+            String komf,
+            String diSahkanOleh
+    ) {
         this.id = id;
         this.nomorSkkp = nomor_skkp;
         this.gajiPokok = gaji_pokok;
@@ -34,6 +36,7 @@ public class Skkp {
         this.tmtSkkp = tmt_skkp;
         this.tmtKgbBerikutnya = tmt_skkp_berikutnya;
         this.komf = komf;
+        this.diSahkanOleh = diSahkanOleh;
     }
 
 
@@ -52,6 +55,14 @@ public class Skkp {
 
     public void setKonf(String value) {
         this.komf = value;
+    }
+
+    public String getDiSahkanOleh() {
+        return diSahkanOleh;
+    }
+
+    public void setDiSahkanOleh(String value) {
+        this.diSahkanOleh = value;
     }
 
     public String getNomorSkkp() {
